@@ -1,3 +1,11 @@
 <resources>
   <string name="app_name">TheCodingChallenge</string>
+  <string name="internet_not_available">Internet connection is not available, Please connect to Internet</string>
+  <string name="loading">Loading...</string>
+  <string name="ok">OK</string>
+
+  <string name="title_not_available">Title not available</string>
+  <string name="size">Size:&#160;</string>
+  <string name="dimension">Dimension:&#160;</string>
+  <string name="kb">&#160;kb</string>
 </resources>
