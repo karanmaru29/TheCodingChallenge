@@ -16,6 +16,9 @@ import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Target;
 import java.util.List;
 
+/**
+ * <p>An adapter class which holds the list data and display data in a @{@link RecyclerView}.</p>
+ */
 public class FlickerDataAdapter extends RecyclerView.Adapter<CustomViewHolder> {
 
   private List<Photo> photoList;

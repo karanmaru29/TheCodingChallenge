@@ -15,6 +15,11 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+/**
+ * <p>A class which implements @{@link DataPresenter} and provide the implementation of calling the
+ * flicker API,
+ * set the view interface and ask view to update the UI based on different UI flow</p>
+ */
 public class DataPresenterImpl implements DataPresenter {
 
   private RetrieveDataView retrieveDataView;
@@ -56,20 +61,31 @@ public class DataPresenterImpl implements DataPresenter {
   }
 
   @Override public void checkInternetConnection() {
-    if(NetworkUtil.isNetworkConnected(retrieveDataView.getContext())){
+    if (NetworkUtil.isNetworkConnected(retrieveDataView.getContext())) {
       getFlickerData(Constants.FLICKER_SEARCH);
-    }
-    else{
-      retrieveDataView.showErrorDialog(retrieveDataView.getContext().getResources().getString(
-          R.string.internet_not_available), 0);
+    } else {
+      retrieveDataView.showErrorDialog(
+          retrieveDataView.getContext().getResources().getString(R.string.internet_not_available),
+          0);
     }
   }
 
+  /**
+   * <p>A method to generate the photo URL based on the response data</p>
+   *
+   * @param photo Model class to provide required info for creating a photo URL
+   * @return generated URL
+   */
   private String generatePhotoUrl(Photo photo) {
     return String.format("https://farm%1$s.staticflickr.com/%2$s/%3$s_%4$s.jpg", photo.getFarm(),
         photo.getServer(), photo.getId(), photo.getSecret());
   }
 
+  /**
+   * <p>Update the @{@link Photo} class object and set the photo URL to display the image on UI</p>
+   *
+   * @param response @{@link FlickerResponse} data object
+   */
   private void setUrl(FlickerResponse response) {
     for (int i = 0; i < response.getPhotos().getPhoto().size(); i++) {
       Photo photo = response.getPhotos().getPhoto().get(i);

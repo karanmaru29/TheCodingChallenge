@@ -2,6 +2,9 @@ package com.presto.thecodingchallenge.model;
 
 import java.util.List;
 
+/**
+ * <p>A subclass of {@link FlickerResponse} and contain list data of Photo information</p>
+ */
 public class Photos {
   private String total;
   private String page;

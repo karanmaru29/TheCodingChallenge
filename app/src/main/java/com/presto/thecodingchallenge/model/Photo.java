@@ -1,5 +1,8 @@
 package com.presto.thecodingchallenge.model;
 
+/**
+ * <p>A subclass of {@link Photos} and contain Photo's information</p>
+ */
 public class Photo {
   private String isfamily;
   private String farm;

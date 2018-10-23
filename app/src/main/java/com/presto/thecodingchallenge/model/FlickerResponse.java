@@ -1,5 +1,8 @@
 package com.presto.thecodingchallenge.model;
 
+/**
+ * <p>A response model class to handle response of flicker API call</p>
+ */
 public class FlickerResponse {
 
   private Photos photos;

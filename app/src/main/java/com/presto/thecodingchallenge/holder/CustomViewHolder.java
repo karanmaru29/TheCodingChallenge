@@ -6,6 +6,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import com.presto.thecodingchallenge.R;
 
+/**
+ * <p>A holder class to initiate view and it's UI components</p>
+ */
 public class CustomViewHolder extends RecyclerView.ViewHolder {
 
   public final View mView;
@@ -21,7 +24,4 @@ public class CustomViewHolder extends RecyclerView.ViewHolder {
     tvDim = mView.findViewById(R.id.tv_dim);
     ivCover = mView.findViewById(R.id.iv_cover);
   }
-
-
-
 }

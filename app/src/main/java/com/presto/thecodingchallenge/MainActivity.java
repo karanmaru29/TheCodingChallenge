@@ -16,6 +16,10 @@ import com.presto.thecodingchallenge.utils.Constants;
 import com.presto.thecodingchallenge.view.RetrieveDataView;
 import java.util.List;
 
+/**
+ * <p>An entry level class of the Application which display the Photo list data based on the @{@link
+ * DataPresenter} implementation</p>
+ */
 public class MainActivity extends AppCompatActivity implements RetrieveDataView {
 
   private DataPresenter dataPresenter;
@@ -31,7 +35,6 @@ public class MainActivity extends AppCompatActivity implements RetrieveDataView 
 
     dataPresenter = new DataPresenterImpl();
     dataPresenter.setView(MainActivity.this);
-    dataPresenter.checkInternetConnection();
   }
 
   @Override public void showProgress() {
@@ -42,7 +45,7 @@ public class MainActivity extends AppCompatActivity implements RetrieveDataView 
 
   @Override protected void onResume() {
     super.onResume();
-    if(flickerDataAdapter == null && !(alertDialog != null && alertDialog.isShowing())){
+    if (flickerDataAdapter == null && !(alertDialog != null && alertDialog.isShowing())) {
       dataPresenter.checkInternetConnection();
     }
   }

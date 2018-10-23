@@ -1,5 +1,8 @@
 package com.presto.thecodingchallenge.utils;
 
+/**
+ * <p>A class which contains the constant String members</p>
+ */
 public class Constants {
 
   public static final String API_KEY = "api_key";
